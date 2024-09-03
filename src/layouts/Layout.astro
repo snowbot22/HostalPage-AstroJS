@@ -1,0 +1,58 @@
+---
+import Header from "../components/Header.astro";
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>
+<style is:global>
+  @font-face {
+    font-family: "FaunaOne";
+    src: url("/fonts/FaunaOne.ttf");
+  }
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  html {
+	font-size: 16px;
+  }
+  body{
+	background: #f5f5f5;
+	color: #372a15;
+  }
+  a {
+    all: unset;
+    cursor: pointer;
+  }
+  ul {
+    list-style: none;
+  }
+
+  /* FLEX */
+  .flex--row--nowrap {
+    display: flex;
+    flex-flow: row nowrap;
+  }
+</style>

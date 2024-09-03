@@ -1,0 +1,103 @@
+nav{
+    background-color: #f0e4d4;
+    padding: 10px;
+}
+
+.desktop__image{
+    width: 150px;
+    height: 100px;
+}
+
+.desktop__ul{
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+}
+
+.nav__a{
+    font-size: 18px;
+    font-family: "FaunaOne", monospace;
+}
+
+.nav__a:hover{
+    text-decoration: underline;
+}
+
+.mobile{
+    display: none;
+}
+
+
+@media screen and (max-width: 700px) and (min-width: 550px){
+    .nav__a{
+        font-size: 14px;
+    }
+    .desktop__image{
+        width: 100px;
+        height: 80px;
+    }
+}
+@media screen and (max-width: 550px){
+    .desktop{
+        display: none!important;
+    }
+    .mobile{
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 100%;
+        place-items: center;
+        padding: 10px;        
+        position: relative;
+    }
+    .desktop__image{
+        grid-row:1;
+        grid-column: 1;
+        width: 125px;
+        height: 85px;
+    }
+    .mobile__ul{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .nav__a{
+        font-size: 14px;
+    }
+    .logo{
+        grid-row: 1;
+        grid-column: 1;
+    }
+    .menu{
+        grid-row: 1;
+        grid-column: 1;
+        justify-self: start;
+    }
+    .menu__image{
+        width: 50px;
+        height: 50px; 
+    }
+    .mobile__ul{
+        display: flex;
+        flex-flow: column nowrap;
+        position: absolute;
+        background-color: #d4c3aa;
+        width: 100%;
+        top: 100px;
+        gap: 0;
+    }
+    .mobile__ul li{
+        width: 100%;
+    }
+    .nav__a{
+        font-size: 16px;
+        height: 30px;
+        display: grid;
+        align-items: end;
+        padding: 0 10px 0 10px;
+        border-bottom: 1px solid #f0e4d4;
+    }
+}
+.hidden{
+    display: none;
+}
