@@ -1,0 +1,20 @@
+---
+interface Props {
+  title: string;
+  img: string;
+  alt: string;
+}
+
+const { title, img, alt } = Astro.props;
+
+import "../styles/start.css";
+---
+
+<article class="start">
+  <h1 class="title">
+    {title}
+  </h1>
+  <picture class="p">
+    <img src={img} alt={alt} class="i" />
+  </picture>
+</article>

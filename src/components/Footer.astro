@@ -1,0 +1,98 @@
+---
+import "../styles/footer.css";
+
+const links = [
+  {
+    name: "Inicio",
+    url: "/",
+  },
+  {
+    name: "Habitaciones",
+    url: "/habitaciones",
+  },
+  {
+    name: "Servicios",
+    url: "/servicios",
+  },
+  {
+    name: "Contacto",
+    url: "/contacto",
+  },
+];
+const social = [
+  {
+    name: "Facebook",
+    url: "https://www.facebook.com/",
+  },
+  {
+    name: "Instagram",
+    url: "https://www.instagram.com/",
+  },
+  {
+    name: "Whatsapp",
+    url: "https://twitter.com/",
+  }
+];
+const otherLinks = [
+  {
+    name: "Políticas de privacidad",
+    url: "/privacidad",
+  },
+  {
+    name: "Términos y condiciones",
+    url: "/terminos",
+  },
+  {
+    name: "Aviso legal",
+    url: "/aviso",
+  },
+];
+---
+
+
+<footer>
+        <nav>
+            <section>
+                <h3>
+                    Enlaces
+                </h3>
+                <ul class="footer__ul">
+                    {links.map((item) => (
+                        <li>
+                            <a href={item.url}>{item.name}</a>
+                        </li>
+                    ))}
+                </ul>
+            </section>
+           <section>
+            <h3>
+                Contacto
+            </h3>
+            <ul class="footer__ul">
+                {social.map((item) => (
+                    <li>
+                        <a href={item.url}>{item.name}</a>
+                    </li>
+                ))}
+            </ul>
+           </section>
+           <section>
+            <h3>
+                Otros enlaces
+            </h3>
+            <ul class="footer__ul">
+                {otherLinks.map((item) => (
+                    <li>
+                        <a href={item.url}>{item.name}</a>
+                    </li>
+                ))}
+            </ul>
+        </section>
+        <section>
+            <h3>Direccion</h3>
+            <a href="">
+                Calle 123, Colonia Villa Bonita, CDMX
+            </a>
+        </section>
+        </nav>
+</footer>

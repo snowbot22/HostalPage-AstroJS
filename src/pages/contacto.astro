@@ -1,0 +1,45 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Start from "../components/Start.astro";
+import Form from "../components/Form";
+
+import "../styles/contacto.css";
+---
+
+<Layout>
+  <article class="contact">
+    <section class="contact__text flex--col--nowrap">
+      <div class="contact__div">
+        <h2 class="contact__title--main">Contactanos</h2>
+        <p class="contact__p--main">En Hostal Villa Bonita estaremos felices de resolver tus dudas.</p>
+      </div>
+      <div class="contact__div">
+        <h3 class="contact__title">Número de teléfono</h3>
+        <p>+52 1 951 123 4567</p>
+      </div>
+      <div class="contact__div">
+        <h3 class="contact__title">Correo electrónico</h3>
+        <p>vilñ</p>
+      </div>
+      <div class="contact__div">
+        <h3 class="contact__title">Dirección</h3>
+        <p>Calle 5 de Mayo 123, Centro, Oaxaca, Oaxaca, México</p>
+        <a href=""> Ver en Maps </a>
+      </div>
+      <div class="contact__div">
+        <h3 class="contact__title">
+            Redes Sociales
+        </h3>
+        <a href=""> Facebook </a>
+        <a href=""> Instagram </a>
+      </div>
+    </section>
+            <img src="/imgs/h6.jpg" alt="" class="contact__img">
+  </article>
+  <article>
+    <h2>
+      Consulta sobre disponibilidad y tarifas
+    </h2>
+    <Form client:load/>
+  </article>
+</Layout>

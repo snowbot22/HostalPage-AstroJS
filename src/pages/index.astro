@@ -1,67 +1,143 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
+import Layout from "../layouts/Layout.astro";
+import "../styles/index.css";
+import Carrusel from "../components/Carrusel.astro";
+import CardClients from "../components/CardClients.jsx";
 ---
 
 <Layout title="Welcome to Astro.">
-	
+  <article class="hero flex--col--nowrap">
+    <section class="hero__text flex--col--nowrap">
+      <h1 class="font--title hero__title">
+        Descubre el Hostal en Riobamba Ideal para tu Próxima Aventura
+      </h1>
+      <p class="font--hero">
+        En Villa Bonita Hostal te ofrecemos un espacio acogedor y familiar, donde podrás disfrutar de tu estancia en Riobamba en una auténtica casa colonial, llena de historia y confort.
+      </p>
+      <a href="" class="a--button m--t--10"> Reservar ahora </a>
+    </section>
+    <picture class="hero__images">
+      <img src="/imgs/hero.png" alt="" class="hero__img">
+    </picture>
+  </article>
+  <article class="overview">
+    <Carrusel />
+    <section class="overview__text flex--col--nowrap">
+      <h2 class="overview__title font--title">
+        Relajate en nuestros espacios acogedores
+      </h2>
+      <p class="overview__p">
+        Nuestros espacios están diseñados para brindarte el máximo confort y tranquilidad durante tu estancia. Desde nuestras habitaciones espaciosas hasta las áreas comunes acogedoras, cada rincón de nuestro hostal en Riobamba está pensado para que te sientas como en casa.
+      </p>
+      <a href="" class="a--button m--t--20"> Contactanos </a>
+    </section>
+  </article>
+  <article class="am flex--col--nowrap">
+    <h2 class="am__title font--title">
+      Comodidades para Sentirte como en Casa
+    </h2>
+    <section class="am__container">
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-1.png" alt="" />
+        </picture>
+        <h3>Desayuno</h3>
+        <p>Desayuno fresco cada mañana con opciones deliciosas y variadas.</p>
+      </div>
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-2.png" alt="" />
+        </picture>
+        <h3>Wi-fi</h3>
+        <p>
+          Disfruta de Wi-Fi de alta velocidad en todo el establecimiento para
+          que te mantengas conectado
+        </p>
+      </div>
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-3.png" alt="" />
+        </picture>
+        <h3>Lockers</h3>
+        <p>
+          Almacena tus pertenencias de forma segura en lockers con acceso
+          personal.
+        </p>
+      </div>
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-4.png" alt="" />
+        </picture>
+        <h3>Cocina Equipada</h3>
+        <p>
+          Disfruta de una cocina equipada para preparar tus comidas favoritas
+          durante tu estancia.
+        </p>
+      </div>
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-1.png" alt="" />
+        </picture>
+        <h3>Cocina Equipada</h3>
+        <p>
+          Disfruta de una cocina equipada para preparar tus comidas favoritas
+          durante tu estancia
+        </p>
+      </div>
+      <div class="am__card">
+        <picture>
+          <img class="am--img" src="/icons/am-1.png" alt="" />
+        </picture>
+        <h3>Cocina Equipada</h3>
+        <p>
+          Disfruta de una cocina equipada para preparar tus comidas favoritas
+          durante tu estancia
+        </p>
+      </div>
+    </section>
+  </article>
+  <article class="clients flex--col--nowrap">
+      <h2 class="clients__title font--title">
+        Reseñas y opiniones de nuestros clientes satisfechos
+      </h2>
+    <section class="clients__container flex--row--wrap">
+      <CardClients client:idle
+        img="/imgs/c-1.png"
+        alt="Cliente 1"
+        score="9,4 Excepcional"
+        t1="Atención excelente y personal con mucha calidad humana",
+        t2="En definitiva lo limpio y bonito del hotel. Definitivamente es un sitio que repetiría sin pensarlo",
+        t3="Muy tranquilo y las camas súper cómodas y calientitas",
+        page="https://www.agoda.com/es-es/villa-bonita-hostel/hotel/all/riobamba-ec.html?finalPriceView=1&isShowMobileAppPrice=false&cid=1918349&numberOfBedrooms=&familyMode=false&adults=2&children=0&rooms=1&maxRooms=0&checkIn=2024-10-24&isCalendarCallout=false&childAges=&numberOfGuest=0&missingChildAges=false&travellerType=1&showReviewSubmissionEntry=false&currencyCode=USD&isFreeOccSearch=false&los=1&searchrequestid=adf9c8d7-57fe-4ab1-bfe9-4cf400d0738a&ds=mTKTMxMjDApXYRAd"
+      />
+      <CardClients client:idle
+        img="/imgs/c-2.png"
+        alt="Cliente 2"
+        score="9,3 Fantástico"
+        t1="La Atención de los anfitriones ayudan mucho con información de sitios de interés."
+        t2="Los hosts fueron super amigables y el ambiente tambien muy bueno",
+        t3="El personal muy amable, las habitaciones limpias y ordenadas. El desayuno muy bueno.",
+        page="https://www.booking.com/Share-DjsQOxd"
+      />
+      <CardClients client:idle
+        img="/imgs/c-3.png"
+        alt="Cliente 3"
+        score="9,8 Magnífico"
+        t1="Uno de los Mejore hostales a los que he ido. Todo fue maravilloso"
+        t2="La estancia fue maravillosa. El personal fue un encanto y las instalaciones muy modernas!!",
+        t3="Muy limpio y agradable el cuarto. Muy amable todos.",
+        page="https://www.spanish.hostelworld.com/pwa/wds/hosteldetails.php/Hostel-Villa-Bonita/Riobamba/302005?from=2024-10-24&to=2024-10-25&HostelNumber=302005&guests=2&Type=1&aff2=EC_x_desktop&utm_medium=metasearch&utm_source=googlehotelfinder&utm_content=hpa_24_10_2024_1_localuniversal_302005_EC_desktop_default_21326804310__2&utm_campaign=EC&lead_time=18&campaign_id=21326804310&hpa_click_type=hotel&hpa_date_search_type=default&hpa_site_property=localuniversal&hpa_occupancy=2&hpa_d_tax=0.00&hpa_d_total=24.00&hpa_rateplan_id=605607%7C2&hpa_u_country=EC&hpa_u_currency=USD&hpa_u_lang=es&hpa_u_list_id&number_of_guests=2&hpa_room_id=826948&hpa_pos=es&gad_source=1&gclid=Cj0KCQjw6oi4BhD1ARIsAL6pox0YI7rcfu3pv7JtFEPEWXlV9Rf98CK6kEiVDOglJnwn_kEfrtulzEIaAvoBEALw_wcB&utm_source=shared_property&utm_medium=clipboard&utm_campaign=302005"
+      />
+    </section>
+  </article>
+  <article class="ubi">
+    <iframe
+      class="mapa"
+      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.113934719396!2d-78.65239059999999!3d-1.6747904!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d3a9d8f3c44191%3A0x4d286f2aa8865d1c!2sVilla%20Bonita%20Hostel!5e0!3m2!1ses-419!2sec!4v1726780968819!5m2!1ses-419!2sec"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </article>
 </Layout>
 
-<style>
-	main {
-		margin: auto;
-		padding: 1rem;
-		width: 800px;
-		max-width: calc(100% - 2rem);
-		color: white;
-		font-size: 20px;
-		line-height: 1.6;
-	}
-	.astro-a {
-		position: absolute;
-		top: -32px;
-		left: 50%;
-		transform: translatex(-50%);
-		width: 220px;
-		height: auto;
-		z-index: -1;
-	}
-	h1 {
-		font-size: 4rem;
-		font-weight: 700;
-		line-height: 1;
-		text-align: center;
-		margin-bottom: 1em;
-	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
-	}
-	.instructions {
-		margin-bottom: 2rem;
-		border: 1px solid rgba(var(--accent-light), 25%);
-		background: linear-gradient(rgba(var(--accent-dark), 66%), rgba(var(--accent-dark), 33%));
-		padding: 1.5rem;
-		border-radius: 8px;
-	}
-	.instructions code {
-		font-size: 0.8em;
-		font-weight: bold;
-		background: rgba(var(--accent-light), 12%);
-		color: rgb(var(--accent-light));
-		border-radius: 4px;
-		padding: 0.3em 0.4em;
-	}
-	.instructions strong {
-		color: rgb(var(--accent-light));
-	}
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 2rem;
-		padding: 0;
-	}
-</style>

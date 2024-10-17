@@ -1,0 +1,58 @@
+---
+const images = ["/imgs/o-1.jpg", "/imgs/o-2.jpg", "/imgs/o-3.jpg", "/imgs/o-4.jpeg", "/imgs/o-5.jpg", "/imgs/o-6.jpg"];
+---
+
+<section class="overview__gallery">
+  <picture id="next" class="o__next">
+    <img src="/icons/a-next.png" alt="" class="o__icon" />
+  </picture>
+  <div class="o__container">
+    <picture class="o--1">
+      <img id="img1" class="overview__image--1" src={images[0]} alt="" />
+    </picture>
+    <picture class="o--2">
+      <img id="img2" class="overview__image--2" src={images[1]} alt="" />
+    </picture>
+  </div>
+  <picture id="prev" class="o__prev">
+    <img src="/icons/a-prev.png" alt="" class="o__icon" />
+  </picture>
+</section>
+
+<script>
+  const images = ["/imgs/o-1.jpg", "/imgs/o-2.jpg", "/imgs/o-3.jpg", "/imgs/o-4.jpeg", "/imgs/o-5.jpg", "/imgs/o-6.jpg"];
+  let currentIndex = 0;
+
+  // Actualiza las imágenes visibles con animación de deslizamiento
+  function updateImages() {
+    const img1 = document.getElementById("img1") as HTMLImageElement;
+    const img2 = document.getElementById("img2") as HTMLImageElement;
+
+    // Añadir clase para aplicar animación de deslizamiento
+    img1.classList.add("slide");
+    img2.classList.add("slide");
+
+    // Actualizamos las imágenes
+    setTimeout(() => {
+      img1.src = images[currentIndex]; // Imagen actual
+      img2.src = images[(currentIndex + 1) % images.length]; // Siguiente imagen
+
+      // Eliminamos la clase después de la animación
+      img1.classList.remove("slide");
+      img2.classList.remove("slide");
+    }, 200); // Debe ser igual al tiempo de transición en CSS
+  }
+
+  document.getElementById("next").addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateImages();
+  });
+
+  document.getElementById("prev").addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateImages();
+  });
+
+  // Inicializar las imágenes
+  updateImages();
+</script>
