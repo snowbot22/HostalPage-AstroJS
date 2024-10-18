@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import "../styles/index.css";
 import Carrusel from "../components/Carrusel.astro";
 import CardClients from "../components/CardClients.jsx";
+import Accordeon from "../components/Accordeon.astro";
 ---
 
 <Layout title="Welcome to Astro.">
@@ -21,80 +22,40 @@ import CardClients from "../components/CardClients.jsx";
     </picture>
   </article>
   <article class="overview">
-    <Carrusel />
-    <section class="overview__text flex--col--nowrap">
+    <section class="overview__container">
+      <Carrusel />
+    </section>
+    <section class="overview__text flex--col--wrap">
       <h2 class="overview__title font--title">
-        Relajate en nuestros espacios acogedores
+        Bienvenido a Villa Bonita
       </h2>
       <p class="overview__p">
-        Nuestros espacios están diseñados para brindarte el máximo confort y tranquilidad durante tu estancia. Desde nuestras habitaciones espaciosas hasta las áreas comunes acogedoras, cada rincón de nuestro hostal en Riobamba está pensado para que te sientas como en casa.
+        Villa Bonita es un hospedaje en el centro de Riobamba, en una casa patrimonial. Ofrecemos amplios espacios, desayuno buffet, cocina para huéspedes y atención personalizada de los anfitriones, garantizando una estancia cómoda y acogedora.
       </p>
       <a href="" class="a--button m--t--20"> Contactanos </a>
     </section>
   </article>
-  <article class="am flex--col--nowrap">
-    <h2 class="am__title font--title">
-      Comodidades para Sentirte como en Casa
-    </h2>
-    <section class="am__container">
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-1.png" alt="" />
-        </picture>
-        <h3>Desayuno</h3>
-        <p>Desayuno fresco cada mañana con opciones deliciosas y variadas.</p>
-      </div>
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-2.png" alt="" />
-        </picture>
-        <h3>Wi-fi</h3>
-        <p>
-          Disfruta de Wi-Fi de alta velocidad en todo el establecimiento para
-          que te mantengas conectado
-        </p>
-      </div>
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-3.png" alt="" />
-        </picture>
-        <h3>Lockers</h3>
-        <p>
-          Almacena tus pertenencias de forma segura en lockers con acceso
-          personal.
-        </p>
-      </div>
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-4.png" alt="" />
-        </picture>
-        <h3>Cocina Equipada</h3>
-        <p>
-          Disfruta de una cocina equipada para preparar tus comidas favoritas
-          durante tu estancia.
-        </p>
-      </div>
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-1.png" alt="" />
-        </picture>
-        <h3>Cocina Equipada</h3>
-        <p>
-          Disfruta de una cocina equipada para preparar tus comidas favoritas
-          durante tu estancia
-        </p>
-      </div>
-      <div class="am__card">
-        <picture>
-          <img class="am--img" src="/icons/am-1.png" alt="" />
-        </picture>
-        <h3>Cocina Equipada</h3>
-        <p>
-          Disfruta de una cocina equipada para preparar tus comidas favoritas
-          durante tu estancia
-        </p>
-      </div>
+  <article class="rooms flex--row--wrap">  
+    <section class="rooms__text flex--col--nowrap">
+      <h2 class="rooms__title">
+          Disfruta de nuestras habitaciones
+      </h2>
+      <p class="rooms__p">
+        Nuestra prioridad es que te sientas como en casa. Por eso, nuestras habitaciones están equipadas con todo lo necesario para que disfrutes de una estancia cómoda y placentera.
+      </p>
+      <a href="" class="a--button m--t--20">
+        Ver habitaciones
+      </a>
     </section>
+    <section class="rooms__carrusel"> 
+      <Carrusel />
+    </section>
+  </article>
+  <article class="faq">
+    <h2>
+      Preguntas Frecuentes
+    </h2>
+    <Accordeon title="¿Cuál es el horario de check-in y check-out?" content="El check-in es a partir de las 14:00 horas y el check-out es hasta las 12:00 horas." />
   </article>
   <article class="clients flex--col--nowrap">
       <h2 class="clients__title font--title">

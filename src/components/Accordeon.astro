@@ -1,0 +1,30 @@
+---
+  import "../styles/accordeon.css";
+
+  interface AccordeonProps {
+    title: string;
+    content: string;
+  }
+
+  const { title,content } = Astro.props;
+---
+
+<section class="acc">
+    <div class="acc__upper">
+        <h2 class="accordeon__title">{title}</h2>
+        <img src="" alt="">
+    </div>
+    <div class="acc__lower hidden">
+        <p class="accordeon__content">{content}</p>
+    </div>
+</section>
+
+<script>
+    const accordeon = document.querySelector('.acc') as HTMLElement;
+    const accordeonContent = accordeon.querySelector('.acc__lower') as HTMLElement;
+    const accordeonTitle = accordeon.querySelector('.accordeon__title') as HTMLElement;
+
+    accordeonTitle.addEventListener('click', () => {
+        accordeonContent.classList.toggle('hidden');
+    });
+</script>

@@ -1,58 +1,61 @@
 ---
-const images = ["/imgs/o-1.jpg", "/imgs/o-2.jpg", "/imgs/o-3.jpg", "/imgs/o-4.jpeg", "/imgs/o-5.jpg", "/imgs/o-6.jpg"];
+const images = [
+  "/imgs/o-1.jpg",
+  "/imgs/o-2.jpg",
+  "/imgs/o-3.jpg",
+  "/imgs/o-4.jpeg",
+  "/imgs/o-5.jpg",
+  "/imgs/o-6.jpg",
+];
+
+import "../styles/carrusel.css";
 ---
 
-<section class="overview__gallery">
-  <picture id="next" class="o__next">
-    <img src="/icons/a-next.png" alt="" class="o__icon" />
-  </picture>
-  <div class="o__container">
-    <picture class="o--1">
-      <img id="img1" class="overview__image--1" src={images[0]} alt="" />
-    </picture>
-    <picture class="o--2">
-      <img id="img2" class="overview__image--2" src={images[1]} alt="" />
-    </picture>
+<section class="carrusel">
+  <button class="carrusel__next carrusel__button"> &#10094 </button>
+  <div class="slides">
+    {
+      images.map((image, index) => (
+        <div class="slide">
+          <img src={image} alt={`Slide ${index + 1}`} class="slide__image" />
+        </div>
+      ))
+    }
+    {
+      images.map((image, index) => (
+        <div class="slide">
+          <img src={image} alt={`Slide ${index + 1}`} class="slide__image" />
+        </div>
+      ))
+    }
   </div>
-  <picture id="prev" class="o__prev">
-    <img src="/icons/a-prev.png" alt="" class="o__icon" />
-  </picture>
+  <button class="carrusel__prev carrusel__button"> &#10095 </button>
 </section>
 
 <script>
-  const images = ["/imgs/o-1.jpg", "/imgs/o-2.jpg", "/imgs/o-3.jpg", "/imgs/o-4.jpeg", "/imgs/o-5.jpg", "/imgs/o-6.jpg"];
-  let currentIndex = 0;
+   const slides = document.querySelector('.slides') as HTMLElement;
+      const totalSlides = document.querySelectorAll('.slide').length;
+      let currentIndex = 0;
 
-  // Actualiza las imágenes visibles con animación de deslizamiento
-  function updateImages() {
-    const img1 = document.getElementById("img1") as HTMLImageElement;
-    const img2 = document.getElementById("img2") as HTMLImageElement;
+      // Mover a la imagen anterior
+      function prevSlide() {
+        currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+        updateSlidePosition();
+      }
 
-    // Añadir clase para aplicar animación de deslizamiento
-    img1.classList.add("slide");
-    img2.classList.add("slide");
+      // Mover a la imagen siguiente
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        updateSlidePosition();
+      }
 
-    // Actualizamos las imágenes
-    setTimeout(() => {
-      img1.src = images[currentIndex]; // Imagen actual
-      img2.src = images[(currentIndex + 1) % images.length]; // Siguiente imagen
+      // Actualizar la posición del carrusel
+      function updateSlidePosition() {
+        const translateValue = -(currentIndex * 100);
+        slides.style.transform = `translateX(${translateValue}%)`;
+      }
 
-      // Eliminamos la clase después de la animación
-      img1.classList.remove("slide");
-      img2.classList.remove("slide");
-    }, 200); // Debe ser igual al tiempo de transición en CSS
-  }
-
-  document.getElementById("next").addEventListener("click", () => {
-    currentIndex = (currentIndex + 1) % images.length;
-    updateImages();
-  });
-
-  document.getElementById("prev").addEventListener("click", () => {
-    currentIndex = (currentIndex - 1 + images.length) % images.length;
-    updateImages();
-  });
-
-  // Inicializar las imágenes
-  updateImages();
+      // Eventos para los botones
+      document.querySelector('.carrusel__prev').addEventListener('click', nextSlide);
+      document.querySelector('.carrusel__next').addEventListener('click', prevSlide);
 </script>

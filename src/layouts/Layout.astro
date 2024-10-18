@@ -19,7 +19,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body>
+  <body class="body--center">
     <Header />
     <main>
       <slot />
@@ -46,8 +46,14 @@ const { title } = Astro.props;
   }
   body {
     background: #f0efee;
-    color: #121212;
+    color: #472C17;
     font-family: "FaunaOne", sans-serif;
+  }
+  main{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
   }
   a {
     all: unset;
@@ -57,7 +63,7 @@ const { title } = Astro.props;
     list-style: none;
   }
   p{
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.5;
   }
 
@@ -69,6 +75,10 @@ const { title } = Astro.props;
   .flex--col--nowrap {
     display: flex;
     flex-flow: column nowrap;
+  }
+  .flex--col--wrap{
+    display: flex;
+    flex-flow: column wrap;
   }
   .flex--center {
     justify-content: center;
@@ -86,8 +96,8 @@ const { title } = Astro.props;
 
   /* A */
   .a--button {
-    background-color: #fff;
-    color: #000;
+    background-color: #472C17;
+    color: #f0efee;
     width: fit-content;
     font-size: 20px;
     padding: 8px 17px;
